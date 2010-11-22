@@ -20,7 +20,7 @@
 }
 - (void)drawRect:(NSRect) rect
 {
-	NSColor* color = [NSColor colorWithCalibratedHue: (presses * 0.01)
+	NSColor* color = [NSColor colorWithCalibratedHue: ((presses % 100) * 0.01)
 										 saturation: 1
 										 brightness: 0.9
 											  alpha: 1];
@@ -30,11 +30,7 @@
 
 - (void)incPresses {
 	presses++;
-	[self setNeedsDisplay: YES];
 }
 
-- (int) getPresses {
-	return presses;
-}
 	
 @end

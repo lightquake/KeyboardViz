@@ -12,5 +12,6 @@
 @interface KeyGrabberView : NSView {
 	int presses;
 }
+
 - (void) incPresses;
 @end

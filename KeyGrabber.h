@@ -7,10 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "KeyGrabberView.h"
 
-
-@interface KeyGrabber : NSTextView {
-	IBOutlet id textView;
+@interface KeyGrabber : NSView {
+	IBOutlet KeyGrabberView* myView;
 }
-- (IBAction) addLetter: sender;
 @end
