@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'keyboardviz' target in the 'keyboardviz' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
