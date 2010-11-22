@@ -16,7 +16,6 @@
 		NSLog(@"modifiers%u", [event modifierFlags]);
 		NSLog(@"foo%d", [myView tag]);
 		[myView incPresses];
-		[myView setNeedsDisplay: YES];
 	}];
 	return self;
 }

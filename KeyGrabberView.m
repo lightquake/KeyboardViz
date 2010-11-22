@@ -30,6 +30,7 @@
 
 - (void)incPresses {
 	presses++;
+	[self setNeedsDisplay: YES];
 }
 
 	
