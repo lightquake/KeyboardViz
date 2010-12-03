@@ -1311,11 +1311,11 @@
 				<string key="NSName">_NSMainMenu</string>
 			</object>
 			<object class="NSWindowTemplate" id="972006081">
-				<int key="NSWindowStyleMask">15</int>
+				<int key="NSWindowStyleMask">7</int>
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{335, 390}, {820, 220}}</string>
 				<int key="NSWTFlags">1954021376</int>
-				<string key="NSWindowTitle">keyboardviz</string>
+				<string key="NSWindowTitle">KeyboardViz</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
 				<string key="NSWindowContentMaxSize">{800, 200}</string>
@@ -3501,9 +3501,9 @@
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
-					<string>{{508, 342}, {820, 220}}</string>
+					<string>{{308, 342}, {820, 220}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{508, 342}, {820, 220}}</string>
+					<string>{{308, 342}, {820, 220}}</string>
 					<integer value="1"/>
 					<string>{{33, 99}, {480, 360}}</string>
 					<boolean value="YES"/>
