@@ -14,7 +14,6 @@
 - (id)initWithFrame: (NSRect) frame {
 	self = [super initWithFrame: frame];
 	[NSEvent addGlobalMonitorForEventsMatchingMask:(NSKeyDownMask) handler:^(NSEvent *event) {
-		//NSLog(@"shit happened");
 		[self trigger: event];
 	}];
 	return self;
@@ -27,7 +26,7 @@
 	if ([event type] == NSKeyDown) {
 		chars = [event characters];
 	}
-	KeyRenderer *renderer = [myView lookupRenderer: [chars characterAtIndex: 0]];
+	KeyRenderer *renderer = [myView lookupRenderer: chars];
 	[renderer incPresses];
 	// [myView incPresses];
 }
