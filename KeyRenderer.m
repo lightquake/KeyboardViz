@@ -16,6 +16,9 @@
 	textView = [[NSTextView alloc] initWithFrame: [self bounds]];
 	[textView setString: @""];
 	[textView setDrawsBackground: false];
+	[textView alignCenter: textView];
+	[textView setFont: [NSFont systemFontOfSize: 25.0]];
+	[textView setEditable: NO];
 	[self addSubview: textView];
 	return self;
 }
@@ -24,6 +27,12 @@
 
 - (void) setLabel: (NSString*) l {
 	[textView setString: l];
+	[textView sizeToFit];
+	NSLayoutManager* layoutManager = [[textView textContainer] layoutManager];
+	float boundHeight = [self bounds].size.height;
+	float glyphHeight = [layoutManager usedRectForTextContainer: [textView textContainer]].size.height;
+	NSSize inset = NSMakeSize(0, (boundHeight - glyphHeight) / 2);
+	[textView setTextContainerInset: inset];
 	[textView setNeedsDisplay: true];
 }
 
