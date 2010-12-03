@@ -12,4 +12,6 @@
 @interface KeyGrabber : NSView {
 	IBOutlet KeyGrabberView* myView;
 }
+
+- (void) trigger: (NSEvent *) event;
 @end

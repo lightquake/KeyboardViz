@@ -7,11 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "KeyRenderer.h"
 
 
 @interface KeyGrabberView : NSView {
-	int presses;
+	NSMutableDictionary *keyMap;
 }
 
-- (void) incPresses;
+- (KeyRenderer *) lookupRenderer: (int) idx;
+
 @end
