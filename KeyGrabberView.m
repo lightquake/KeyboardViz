@@ -17,15 +17,15 @@
 	NSLog(@"%@", frameRect);
 	keyMap = [[NSMutableDictionary alloc] init];
 	
-	float hspace = 5.0;
-	float vspace = 5.0;
-	float key_size = 25.0;
+	float hspace = 10.0;
+	float vspace = 10.0;
+	float key_size = 50.0;
 	
 	NSString *topRow = @"qwertyuiop[]\\";
 	for (int i = 0; i < [topRow length]; i++) {
 		NSString *label = [topRow substringWithRange: NSMakeRange(i, 1)];
 		KeyRenderer *renderer = [[KeyRenderer alloc] initWithLabel: label];
-		NSRect r = NSMakeRect(1 * hspace + (key_size + hspace) * i, 2 * vspace, key_size, key_size);
+		NSRect r = NSMakeRect(2 * hspace + (key_size + hspace) * i, 2 * vspace, key_size, key_size);
 		[renderer initWithFrame: r];
 		[self addSubview: renderer];
 		char c = [topRow characterAtIndex: i];
@@ -36,7 +36,7 @@
 	for (int i = 0; i < [middleRow length]; i++) {
 		NSString *label = [middleRow substringWithRange: NSMakeRange(i, 1)];
 		KeyRenderer *renderer = [[KeyRenderer alloc] initWithLabel: label];
-		NSRect r = NSMakeRect(2 * hspace + (key_size + hspace) * i, 3 * vspace + key_size, key_size, key_size);
+		NSRect r = NSMakeRect(3 * hspace + (key_size + hspace) * i, 3 * vspace + key_size, key_size, key_size);
 		[renderer initWithFrame: r];
 		[self addSubview: renderer];
 		char c = [middleRow characterAtIndex: i];
@@ -47,7 +47,7 @@
 	for (int i = 0; i < [bottomRow length]; i++) {
 		NSString *label = [bottomRow substringWithRange: NSMakeRange(i, 1)];
 		KeyRenderer *renderer = [[KeyRenderer alloc] initWithLabel: label];
-		NSRect r = NSMakeRect(5 * hspace + (key_size + hspace) * i, 4 * vspace + 2 * key_size, key_size, key_size);
+		NSRect r = NSMakeRect(6 * hspace + (key_size + hspace) * i, 4 * vspace + 2 * key_size, key_size, key_size);
 		[renderer initWithFrame: r];
 		[self addSubview: renderer];
 		char c = [bottomRow characterAtIndex: i];
