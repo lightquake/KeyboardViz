@@ -11,11 +11,20 @@
 
 @implementation KeyRenderer
 
-
-- (KeyRenderer*) initWithLabel: (NSString*) l {
-	self = [super init];
-	label = l;
+- (KeyRenderer*) initWithFrame:(NSRect)frameRect {
+	self = [super initWithFrame: frameRect];
+	textView = [[NSTextView alloc] initWithFrame: [self bounds]];
+	[textView setString: @""];
+	[textView setDrawsBackground: false];
+	[self addSubview: textView];
 	return self;
+}
+
+
+
+- (void) setLabel: (NSString*) l {
+	[textView setString: l];
+	[textView setNeedsDisplay: true];
 }
 
 

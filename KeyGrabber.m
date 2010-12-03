@@ -29,7 +29,6 @@
 	}
 	KeyRenderer *renderer = [myView lookupRenderer: [chars characterAtIndex: 0]];
 	[renderer incPresses];
-	[myView setNeedsDisplay: true];
 	// [myView incPresses];
 }
 

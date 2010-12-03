@@ -11,10 +11,10 @@
 
 @interface KeyRenderer : NSView	{
 	int presses;
-	NSString *label;
+	NSTextView *textView;
 }
 
-- (KeyRenderer*) initWithLabel: (NSString*) l;
+- (void) setLabel: (NSString*) l;
 
 - (void) resetPresses;
 - (void) incPresses;
