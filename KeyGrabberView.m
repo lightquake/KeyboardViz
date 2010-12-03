@@ -47,7 +47,7 @@
 	NSRect r = NSMakeRect(xCoord, yCoord, 50, 50);
 	KeyRenderer *renderer = [[KeyRenderer alloc] init];
 	[renderer initWithFrame: r];
-	[renderer setLabel: label];
+	[renderer setLabel: [label uppercaseString]];
 	[self addSubview: renderer];
 	[keyMap setObject: renderer forKey: label];
 }
