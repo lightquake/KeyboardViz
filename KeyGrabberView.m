@@ -13,10 +13,17 @@
 @implementation KeyGrabberView
 - (id) initWithFrame:(NSRect)frameRect {
 	self = [super initWithFrame: frameRect];
+	NSLog(@"%@", frameRect);
 	keyMap = [[NSMutableDictionary alloc] init];
-	for (int i = 'a'; i <= 'z'; i++) {
-		KeyRenderer *renderer = [KeyRenderer initWithLabel: @"a"];
-		[keyMap setObject:renderer forKey: [NSNumber numberWithInt: i]];
+	NSString *topRow = @"qwertyuiop";
+	for (int i = 0; i < 10; i++) {
+		NSString *label = [topRow substringWithRange: NSMakeRange(i, 1)];
+		KeyRenderer *renderer = [[KeyRenderer alloc] initWithLabel: label];
+		NSRect r = NSMakeRect(20 + 60 * i, 20, 50, 50);
+		[renderer initWithFrame: r];
+		[self addSubview: renderer];
+		char c = [topRow characterAtIndex: i];
+		[keyMap setObject:renderer forKey: [NSNumber numberWithChar: c]];
 	}
 	return self;
 	
@@ -26,15 +33,6 @@
 	// fill background
 	[[NSColor grayColor] set];
 	NSRectFill([self bounds]);
-	int order[] = {113, 119};
-	for (int i = 0; i < 2; i++) {
-		KeyRenderer *renderer = [self lookupRenderer: order[i]];
-		NSRect r = NSMakeRect(50 + i * 50, 50, 40, 40);
-		int presses = [renderer presses];
-		NSColor *color = [NSColor colorWithCalibratedHue: (presses * .02) saturation: 1 brightness: 1 alpha: 1];
-		[color set];
-		NSRectFill(r);
-	}
 	
 }
 
@@ -43,6 +41,10 @@
 }
 - (NSMutableDictionary *) getMap {
 	return keyMap;
+}
+
+- (BOOL) isFlipped {
+	return YES;
 }
 	
 @end

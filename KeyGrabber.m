@@ -13,7 +13,7 @@
 
 - (id)initWithFrame: (NSRect) frame {
 	self = [super initWithFrame: frame];
-	[NSEvent addGlobalMonitorForEventsMatchingMask:(NSKeyDownMask | NSFlagsChangedMask) handler:^(NSEvent *event) {
+	[NSEvent addGlobalMonitorForEventsMatchingMask:(NSKeyDownMask) handler:^(NSEvent *event) {
 		//NSLog(@"shit happened");
 		[self trigger: event];
 	}];

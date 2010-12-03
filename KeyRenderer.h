@@ -9,14 +9,12 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface KeyRenderer : NSObject {
+@interface KeyRenderer : NSView	{
 	int presses;
 	NSString *label;
 }
 
-+ (KeyRenderer*) initWithLabel: (NSString*) l;
-
-- (void) setLabel: (NSString*) l;
+- (KeyRenderer*) initWithLabel: (NSString*) l;
 
 - (void) resetPresses;
 - (void) incPresses;
