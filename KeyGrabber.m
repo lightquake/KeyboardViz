@@ -24,11 +24,11 @@
 - (void) trigger: (NSEvent *) event {
 	NSString *chars = @"";
 	if ([event type] == NSKeyDown) {
-		chars = [event characters];
+		chars = [event charactersIgnoringModifiers];
 	}
-	KeyRenderer *renderer = [myView lookupRenderer: chars];
+	NSLog(@"%d", [event modifierFlags]);
+	KeyRenderer *renderer = [myView lookupRenderer: [chars lowercaseString]];
 	[renderer incPresses];
-	// [myView incPresses];
 }
 
 

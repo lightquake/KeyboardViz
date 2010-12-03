@@ -15,5 +15,5 @@
 }
 
 - (KeyRenderer *) lookupRenderer: (NSString*) idx;
-- (void) makeRenderer: (NSString *) label x: (int) xCoord y: (int) yCoord;
+- (void) makeRenderers: (NSString *) chars x: (int) xCoord y: (int) yCoord;
 @end

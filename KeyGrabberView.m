@@ -21,35 +21,39 @@
 	float vspace = 10.0;
 	float key_size = 50.0;
 	
+	NSString *numbers = @"`1234567890-=";
+	[self makeRenderers:numbers x:hspace y:vspace];
 	NSString *topRow = @"qwertyuiop[]\\";
-	for (int i = 0; i < [topRow length]; i++) {
-		NSString *label = [topRow substringWithRange: NSMakeRange(i, 1)];
-		[self makeRenderer:label x:2 * hspace + (key_size + hspace) * i y: 2 * vspace];
-	}
-	
+	[self makeRenderers:topRow x:6*hspace + key_size y:2*vspace + key_size];
 	NSString *middleRow = @"asdfghjkl;'";
-	for (int i = 0; i < [middleRow length]; i++) {
-		NSString *label = [middleRow substringWithRange: NSMakeRange(i, 1)];
-		[self makeRenderer:label x:3 * hspace + (key_size + hspace) * i y: 3 * vspace + key_size];
-
-	}
-	
+	[self makeRenderers:middleRow x:7*hspace + key_size y:3*vspace + 2*key_size];
 	NSString *bottomRow = @"zxcvbnm,./";
-	for (int i = 0; i < [bottomRow length]; i++) {
-		NSString *label = [bottomRow substringWithRange: NSMakeRange(i, 1)];
-		[self makeRenderer:label x:6 * hspace + (key_size + hspace) * i y: 4 * vspace + 2 * key_size];
+	[self makeRenderers:bottomRow x:10*hspace + key_size y:4*vspace + 3*key_size];
+
+	
+	// I want to handle $ as the same as 4, and there's no function as far as I know that de-shifts
+	NSString *upperSymbols = @"~!@#$%^&*()_+{}|:\"<>?";
+	NSString *lowerSymbols = @"`1234567890-=[]\\;',./";
+	for (int i = 0; i < [upperSymbols length]; i++) {
+		NSRange range = NSMakeRange(i, 1);
+		NSString *upper = [upperSymbols substringWithRange: range];
+		NSString *lower = [lowerSymbols substringWithRange: range];
+		[keyMap setObject: [keyMap objectForKey: lower] forKey: upper];
 	}
 	return self;
 	
 }
 
-- (void) makeRenderer: (NSString *) label x: (int) xCoord y: (int) yCoord {
-	NSRect r = NSMakeRect(xCoord, yCoord, 50, 50);
-	KeyRenderer *renderer = [[KeyRenderer alloc] init];
-	[renderer initWithFrame: r];
-	[renderer setLabel: [label uppercaseString]];
-	[self addSubview: renderer];
-	[keyMap setObject: renderer forKey: label];
+- (void) makeRenderers: (NSString *) chars x: (int) xCoord y: (int) yCoord {
+	for (int i = 0; i < [chars length]; i++) {
+		NSString *label = [chars substringWithRange: NSMakeRange(i, 1)];
+		NSRect r = NSMakeRect(xCoord + i * 60, yCoord, 50, 50);
+		KeyRenderer *renderer = [[KeyRenderer alloc] init];
+		[renderer initWithFrame: r];
+		[renderer setLabel: [label uppercaseString]];
+		[self addSubview: renderer];
+		[keyMap setObject: renderer forKey: label];
+	}
 }
 
 

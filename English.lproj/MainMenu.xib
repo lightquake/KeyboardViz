@@ -12,6 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="372"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1309,33 +1310,32 @@
 				<string key="NSName">_NSMainMenu</string>
 			</object>
 			<object class="NSWindowTemplate" id="972006081">
-				<int key="NSWindowStyleMask">7</int>
+				<int key="NSWindowStyleMask">15</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{335, 390}, {820, 220}}</string>
+				<string key="NSWindowRect">{{335, 359}, {894, 251}}</string>
 				<int key="NSWTFlags">1954021376</int>
 				<string key="NSWindowTitle">KeyboardViz</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
-				<string key="NSWindowContentMaxSize">{800, 200}</string>
-				<string key="NSWindowContentMinSize">{800, 200}</string>
+				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
 				<object class="NSView" key="NSWindowView" id="439893737">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSCustomView" id="499649954">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">274</int>
-							<string key="NSFrameSize">{820, 220}</string>
+							<string key="NSFrameSize">{894, 251}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<string key="NSClassName">KeyGrabberView</string>
 						</object>
 					</object>
-					<string key="NSFrameSize">{820, 220}</string>
+					<string key="NSFrameSize">{894, 251}</string>
+					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
-				<string key="NSMinSize">{800, 222}</string>
-				<string key="NSMaxSize">{800, 222}</string>
+				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
 			</object>
 			<object class="NSCustomObject" id="976324537">
 				<string key="NSClassName">keyboardvizAppDelegate</string>
@@ -3498,13 +3498,13 @@
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
-					<string>{{308, 342}, {820, 220}}</string>
+					<string>{{219, 415}, {894, 251}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{308, 342}, {820, 220}}</string>
+					<string>{{219, 415}, {894, 251}}</string>
 					<integer value="1"/>
 					<string>{{33, 99}, {480, 360}}</string>
-					<boolean value="YES"/>
-					<boolean value="YES"/>
+					<boolean value="NO"/>
+					<boolean value="NO"/>
 					<string>{800, 200}</string>
 					<string>{800, 200}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3592,7 +3592,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">AUMIAABC8AAAA</bytes>
+						<bytes key="NSTransformStruct">AQAAAADCMAAAA</bytes>
 					</object>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
@@ -4271,7 +4271,7 @@
 			<integer value="3000" key="NS.object.0"/>
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
-		<string key="IBDocument.LastKnownRelativeProjectPath">../keyboardviz.xcodeproj</string>
+		<string key="IBDocument.LastKnownRelativeProjectPath">../KeyboardViz.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<bool key="EncodedWithXMLCoder">YES</bool>
