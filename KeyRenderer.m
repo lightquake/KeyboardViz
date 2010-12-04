@@ -45,7 +45,12 @@
 
 - (void) incPresses {
 	presses++;
-	[self setNeedsDisplay: true];
+	[self setNeedsDisplay: YES];
+}
+
+- (void) decay {
+	presses /= pow(2.0, 1/6000.0);
+	[self setNeedsDisplay: YES];
 }
 
 - (int) presses {

@@ -10,7 +10,7 @@
 
 
 @interface KeyRenderer : NSView	{
-	int presses;
+	float presses;
 	NSTextView *textView;
 }
 
@@ -18,5 +18,6 @@
 
 - (void) resetPresses;
 - (void) incPresses;
+- (void) decay;
 - (int) presses;
 @end

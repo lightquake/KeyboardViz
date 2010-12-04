@@ -40,6 +40,11 @@
 		NSString *lower = [lowerSymbols substringWithRange: range];
 		[keyMap setObject: [keyMap objectForKey: lower] forKey: upper];
 	}
+	[NSTimer scheduledTimerWithTimeInterval:0.1
+									 target:self
+								   selector:@selector(decay:)
+								   userInfo:nil
+									repeats:YES];
 	return self;
 	
 }
@@ -66,6 +71,11 @@
 
 - (BOOL) isFlipped {
 	return YES;
+}
+
+- (void) decay:(NSTimer*)timer {
+	NSArray *renderers = [keyMap allValues];
+	[renderers makeObjectsPerformSelector:@selector(decay)];
 }
 
 	
