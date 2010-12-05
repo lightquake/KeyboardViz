@@ -22,9 +22,9 @@
 	NSString *topRow = @"qwertyuiop[]\\";
 	[self makeRenderers:topRow x:1.6 * PADDED_KEY_SIZE y:PADDED_KEY_SIZE];
 	NSString *middleRow = @"asdfghjkl;'";
-	[self makeRenderers:middleRow x:2*PADDED_KEY_SIZE y:2*PADDED_KEY_SIZE];
+	[self makeRenderers:middleRow x:1.9*PADDED_KEY_SIZE y:2*PADDED_KEY_SIZE];
 	NSString *bottomRow = @"zxcvbnm,./";
-	[self makeRenderers:bottomRow x:2.6*PADDED_KEY_SIZE y:3*PADDED_KEY_SIZE];
+	[self makeRenderers:bottomRow x:2.5*PADDED_KEY_SIZE y:3*PADDED_KEY_SIZE];
 
 	
 	// I want to handle $ as the same as 4, and there's no function as far as I know that de-shifts
