@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "KeyGrabberView.h"
 
-@interface KeyGrabber : NSView {
+@interface KeyGrabber : NSObject {
 	IBOutlet KeyGrabberView* myView;
 }
 

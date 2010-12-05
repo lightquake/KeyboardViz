@@ -11,12 +11,10 @@
 
 @implementation KeyGrabber
 
-- (id)initWithFrame: (NSRect) frame {
-	self = [super initWithFrame: frame];
+- (void)awakeFromNib {
 	[NSEvent addGlobalMonitorForEventsMatchingMask:(NSKeyDownMask) handler:^(NSEvent *event) {
 		[self trigger: event];
 	}];
-	return self;
 }
 
 
@@ -24,9 +22,20 @@
 - (void) trigger: (NSEvent *) event {
 	NSString *chars = @"";
 	if ([event type] == NSKeyDown) {
-		chars = [event charactersIgnoringModifiers];
+		chars = [[event charactersIgnoringModifiers] lowercaseString];
 	}
-	KeyRenderer *renderer = [myView lookupRenderer: [chars lowercaseString]];
+	NSString *descriptor;
+	if ([chars length] == 0) return;
+	unichar c = [chars characterAtIndex: 0];
+	switch (c) {
+		case 127:
+			descriptor = @"del";
+			break;
+		default:
+			descriptor = chars;
+			break;
+	}
+	KeyRenderer *renderer = [myView lookupRenderer: descriptor];
 	[renderer incPresses];
 }
 
