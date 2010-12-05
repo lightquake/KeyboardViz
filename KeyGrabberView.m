@@ -8,24 +8,23 @@
 
 #import "KeyGrabberView.h"
 #import "KeyRenderer.h"
-#define KEY_SIZE 55
+#define PADDED_KEY_SIZE 55
+#define KEY_SIZE 50
 
 @implementation KeyGrabberView
 - (id) initWithFrame:(NSRect)frameRect {
 	self = [super initWithFrame: frameRect];
 	NSLog(@"%@", frameRect);
 	keyMap = [[NSMutableDictionary alloc] init];
-	
-	float key_size = 55.0;
-	
+		
 	NSString *numbers = @"`1234567890-=";
 	[self makeRenderers:numbers x:0 y:0];
 	NSString *topRow = @"qwertyuiop[]\\";
-	[self makeRenderers:topRow x:1.6 * key_size y:key_size];
+	[self makeRenderers:topRow x:1.6 * PADDED_KEY_SIZE y:PADDED_KEY_SIZE];
 	NSString *middleRow = @"asdfghjkl;'";
-	[self makeRenderers:middleRow x:2*key_size y:2*key_size];
+	[self makeRenderers:middleRow x:2*PADDED_KEY_SIZE y:2*PADDED_KEY_SIZE];
 	NSString *bottomRow = @"zxcvbnm,./";
-	[self makeRenderers:bottomRow x:2.6*key_size y:3*key_size];
+	[self makeRenderers:bottomRow x:2.6*PADDED_KEY_SIZE y:3*PADDED_KEY_SIZE];
 
 	
 	// I want to handle $ as the same as 4, and there's no function as far as I know that de-shifts
@@ -49,7 +48,7 @@
 - (void) makeRenderers: (NSString *) chars x: (int) xCoord y: (int) yCoord {
 	for (int i = 0; i < [chars length]; i++) {
 		NSString *label = [chars substringWithRange: NSMakeRange(i, 1)];
-		NSRect r = NSMakeRect(xCoord + i * 55, yCoord, 50, 50);
+		NSRect r = NSMakeRect(xCoord + i * PADDED_KEY_SIZE, yCoord, KEY_SIZE, KEY_SIZE);
 		KeyRenderer *renderer = [[KeyRenderer alloc] init];
 		[renderer initWithFrame: r];
 		[renderer setLabel: [label uppercaseString]];
