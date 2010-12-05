@@ -26,7 +26,6 @@
 	if ([event type] == NSKeyDown) {
 		chars = [event charactersIgnoringModifiers];
 	}
-	NSLog(@"%d", [event modifierFlags]);
 	KeyRenderer *renderer = [myView lookupRenderer: [chars lowercaseString]];
 	[renderer incPresses];
 }

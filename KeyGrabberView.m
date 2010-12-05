@@ -16,7 +16,8 @@
 	self = [super initWithFrame: frameRect];
 	NSLog(@"%@", frameRect);
 	keyMap = [[NSMutableDictionary alloc] init];
-		
+
+	// construct the key renderers
 	NSString *numbers = @"`1234567890-=";
 	[self makeRenderers:numbers x:0 y:0];
 	NSString *topRow = @"qwertyuiop[]\\";
@@ -27,7 +28,7 @@
 	[self makeRenderers:bottomRow x:2.5*PADDED_KEY_SIZE y:3*PADDED_KEY_SIZE];
 
 	
-	// I want to handle $ as the same as 4, and there's no function as far as I know that de-shifts
+	// I want to handle $ as the same as 4, and there's no function as far as I know that 'de-shifts'
 	NSString *upperSymbols = @"~!@#$%^&*()_+{}|:\"<>?";
 	NSString *lowerSymbols = @"`1234567890-=[]\\;',./";
 	for (int i = 0; i < [upperSymbols length]; i++) {
@@ -36,7 +37,7 @@
 		NSString *lower = [lowerSymbols substringWithRange: range];
 		[keyMap setObject: [keyMap objectForKey: lower] forKey: upper];
 	}
-	[NSTimer scheduledTimerWithTimeInterval:0.1
+	[NSTimer scheduledTimerWithTimeInterval:1.0
 									 target:self
 								   selector:@selector(decay:)
 								   userInfo:nil
