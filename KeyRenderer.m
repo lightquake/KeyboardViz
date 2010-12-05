@@ -58,7 +58,7 @@
 }
 
 - (void) drawRect:(NSRect)dirtyRect {
-	NSColor *color = [NSColor colorWithCalibratedHue: .7-(presses * .002) saturation: 1 brightness: .2+(presses * .01) alpha: 1];
+	NSColor *color = [NSColor colorWithCalibratedHue: .7-presses * .008 saturation: 1 brightness: .2+(presses * .01) alpha: 1];
 	[color set];
 	NSRectFill([self bounds]);
 	[[NSColor blackColor] set];
