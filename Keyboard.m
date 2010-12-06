@@ -11,8 +11,6 @@
 
 @implementation Keyboard
 
-@synthesize view;
-
 - (void)awakeFromNib {
 	[NSEvent addGlobalMonitorForEventsMatchingMask:(NSKeyDownMask) handler:^(NSEvent *event) {
 		[self trigger: event];
@@ -33,7 +31,8 @@
 			descriptor = chars;
 			break;
 	}
-	KeyView *renderer = [view lookupRenderer: descriptor];
+    
+	KeyView *renderer = [kbView lookupRenderer: descriptor];
     renderer.presses++;
 }
 

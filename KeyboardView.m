@@ -13,8 +13,6 @@
 
 @implementation KeyboardView
 
-@synthesize keyMap;
-
 - (id) initWithFrame:(NSRect)frameRect {
 	self = [super initWithFrame: frameRect];
 	keyMap = [[NSMutableDictionary alloc] init];
@@ -24,6 +22,7 @@
 	// numbers and delete
 	NSString *numbers = @"`1234567890-=";
 	[self makeKeys:numbers x:0 y:0];
+    
 	NSLog(@"%f", 1.6*PADDED_KEY_SIZE);
 	[self makeKey:@"del" x:13 * PADDED_KEY_SIZE y:0 width:1.5*PADDED_KEY_SIZE + 1];
 
@@ -63,6 +62,7 @@
 	for (int i = 0; i < [chars length]; i++) {
 		NSString *label = [chars substringWithRange: NSMakeRange(i, 1)];
 		KeyView *key = [self makeKey:[label uppercaseString] x:xCoord+i*PADDED_KEY_SIZE y:yCoord width:KEY_SIZE];
+        NSLog(@"%@", label);
 		[keyMap setObject: key forKey: label];
 	}
 }
