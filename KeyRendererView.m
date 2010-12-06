@@ -6,12 +6,12 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "KeyRenderer.h"
+#import "KeyRendererView.h"
 
 
-@implementation KeyRenderer
+@implementation KeyRendererView
 
-- (KeyRenderer*) initWithFrame:(NSRect)frameRect {
+- (KeyRendererView*) initWithFrame:(NSRect)frameRect {
 	self = [super initWithFrame: frameRect];
 	textView = [[NSTextView alloc] initWithFrame: [self bounds]];
 	[textView setString: @""];

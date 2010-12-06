@@ -33,7 +33,7 @@
 			descriptor = chars;
 			break;
 	}
-	KeyRenderer *renderer = [myView lookupRenderer: descriptor];
+	KeyRendererView *renderer = [myView lookupRenderer: descriptor];
 	[renderer incPresses];
 }
 
