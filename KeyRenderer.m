@@ -49,7 +49,7 @@
 }
 
 - (void) decay {
-	presses /= pow(2.0, 1/600.0);
+	presses /= pow(2.0, 1/900.0);
 	[self setNeedsDisplay: YES];
 }
 
