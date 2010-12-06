@@ -32,8 +32,7 @@
 			break;
 	}
     
-	KeyView *renderer = [kbView lookupRenderer: descriptor];
-    renderer.presses++;
+    [kbView keyPressed:descriptor];
 }
 
 @end

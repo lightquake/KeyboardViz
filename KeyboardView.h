@@ -14,7 +14,7 @@
 	NSMutableDictionary *keyMap;
 }
 
-- (KeyView *) lookupRenderer: (NSString*) idx;
+- (void) keyPressed:(NSString *)keyName;
 - (void) makeKeys: (NSString *) chars x: (int) xCoord y: (int) yCoord;
 - (KeyView*) makeKey:(NSString*) label x:(int)xCoord y:(int)yCoord width:(int)w;
 

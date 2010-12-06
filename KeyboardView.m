@@ -13,7 +13,7 @@
 
 @implementation KeyboardView
 
-- (id) initWithFrame:(NSRect)frameRect {
+- (id)initWithFrame:(NSRect)frameRect {
 	self = [super initWithFrame: frameRect];
 	keyMap = [[NSMutableDictionary alloc] init];
 
@@ -58,7 +58,7 @@
 	
 }
 
-- (void) makeKeys:(NSString*)chars x:(int)xCoord y:(int)yCoord {
+-(void)makeKeys:(NSString*)chars x:(int)xCoord y:(int)yCoord {
 	for (int i = 0; i < [chars length]; i++) {
 		NSString *label = [chars substringWithRange: NSMakeRange(i, 1)];
 		KeyView *key = [self makeKey:[label uppercaseString] x:xCoord+i*PADDED_KEY_SIZE y:yCoord width:KEY_SIZE];
@@ -67,7 +67,7 @@
 	}
 }
 
-- (KeyView*) makeKey:(NSString *)label x:(int)xCoord y:(int)yCoord width:(int)width {
+-(KeyView*)makeKey:(NSString*)label x:(int)xCoord y:(int)yCoord width:(int)width {
     NSRect r = NSMakeRect(xCoord, yCoord, width, KEY_SIZE);
     KeyView *renderer = [[KeyView alloc] initWithFrame: r];
     [renderer setLabel: label];
@@ -76,18 +76,22 @@
 }
 
 
-- (KeyView *) lookupRenderer: (NSString*) idx {
-	return [keyMap objectForKey:idx];
+-(void)keyPressed:(NSString*)keyName {
+    KeyView *key = [keyMap objectForKey:keyName];
+    key.presses++;
+    [key setNeedsDisplay:YES];
 }
 
-- (BOOL) isFlipped {
-	return YES;
-}
-
-- (void) decay:(NSTimer*)timer {
+-(void)decay:(NSTimer*)timer {
 	NSArray *renderers = [keyMap allValues];
 	[renderers makeObjectsPerformSelector:@selector(decay)];
 }
+
+-(BOOL)isFlipped {
+	return YES;
+}
+
+
 
 	
 @end
