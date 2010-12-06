@@ -19,7 +19,7 @@
 	[textView setString: @""];
 	[textView setDrawsBackground: false];
 	[textView alignCenter: textView];
-	[textView setFont: [NSFont systemFontOfSize: 25.0]];
+	[textView setFont: [NSFont systemFontOfSize: 20.0]];
 	[textView setTextColor: [NSColor whiteColor]];
 	[textView setEditable: NO];
 	[textView setSelectable: NO];

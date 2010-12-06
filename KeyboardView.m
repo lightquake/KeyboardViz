@@ -22,7 +22,7 @@
 	// numbers and delete
 	NSString *numbers = @"`1234567890-=";
 	[self makeKeys:numbers x:0 y:0];
-	[self makeKey:@"del" x:13 * PADDED_KEY_SIZE y:0 width:1.5*PADDED_KEY_SIZE+1];
+	[self makeKey:@"delete" x:13 * PADDED_KEY_SIZE y:0 width:1.5*PADDED_KEY_SIZE+1];
 
     // top row and tab
 	NSString *topRow = @"QWERTYUIOP[]\\";
