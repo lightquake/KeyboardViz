@@ -7,12 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "KeyGrabberView.h"
+#import "KeyboardView.h"
 
 @interface Keyboard : NSObject {
-	IBOutlet KeyGrabberView* myView;
+	IBOutlet KeyboardView* myView;
 }
 
 - (void) trigger: (NSEvent *) event;
-@property (retain) KeyGrabberView* myView;
+@property (retain) KeyboardView* myView;
 @end

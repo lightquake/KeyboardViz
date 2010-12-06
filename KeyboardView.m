@@ -6,12 +6,12 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "KeyGrabberView.h"
+#import "KeyboardView.h"
 #import "KeyRendererView.h"
 #define PADDED_KEY_SIZE 55.0
 #define KEY_SIZE 50
 
-@implementation KeyGrabberView
+@implementation KeyboardView
 - (id) initWithFrame:(NSRect)frameRect {
 	self = [super initWithFrame: frameRect];
 	keyMap = [[NSMutableDictionary alloc] init];

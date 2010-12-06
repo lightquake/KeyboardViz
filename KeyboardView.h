@@ -10,7 +10,7 @@
 #import "KeyRendererView.h"
 
 
-@interface KeyGrabberView : NSView {
+@interface KeyboardView : NSView {
 	NSMutableDictionary *keyMap;
 }
 

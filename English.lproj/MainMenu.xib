@@ -195,7 +195,7 @@
 							<int key="NSvFlags">256</int>
 							<string key="NSFrame">{{5, 5}, {798, 215}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<string key="NSClassName">KeyGrabberView</string>
+							<string key="NSClassName">KeyboardView</string>
 						</object>
 					</object>
 					<string key="NSFrameSize">{808, 225}</string>
@@ -594,27 +594,27 @@
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<object class="IBPartialClassDescription">
-					<string key="className">KeyGrabberView</string>
-					<string key="superclassName">NSView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">KeyGrabberView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
 					<string key="className">Keyboard</string>
 					<string key="superclassName">NSView</string>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">myView</string>
-						<string key="NS.object.0">KeyGrabberView</string>
+						<string key="NS.object.0">KeyboardView</string>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<string key="NS.key.0">myView</string>
 						<object class="IBToOneOutletInfo" key="NS.object.0">
 							<string key="name">myView</string>
-							<string key="candidateClassName">KeyGrabberView</string>
+							<string key="candidateClassName">KeyboardView</string>
 						</object>
 					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBUserSource</string>
+						<string key="minorKey"/>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">KeyboardView</string>
+					<string key="superclassName">NSView</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBUserSource</string>
 						<string key="minorKey"/>
