@@ -22,20 +22,19 @@
 	// numbers and delete
 	NSString *numbers = @"`1234567890-=";
 	[self makeKeys:numbers x:0 y:0];
-    
-	NSLog(@"%f", 1.6*PADDED_KEY_SIZE);
-	[self makeKey:@"del" x:13 * PADDED_KEY_SIZE y:0 width:1.5*PADDED_KEY_SIZE + 1];
+	[self makeKey:@"del" x:13 * PADDED_KEY_SIZE y:0 width:1.5*PADDED_KEY_SIZE+1];
 
-    // top row
-	NSString *topRow = @"qwertyuiop[]\\";
+    // top row and tab
+	NSString *topRow = @"QWERTYUIOP[]\\";
 	[self makeKeys:topRow x:1.6 * PADDED_KEY_SIZE y:PADDED_KEY_SIZE];
+    [self makeKey:@"tab" x:0 y:PADDED_KEY_SIZE width:1.5*PADDED_KEY_SIZE+1];
 
     // middle row
-	NSString *middleRow = @"asdfghjkl;'";
+	NSString *middleRow = @"ASDFGHJKL;'";
 	[self makeKeys:middleRow x:1.9*PADDED_KEY_SIZE y:2*PADDED_KEY_SIZE];
 
     // bottom row
-	NSString *bottomRow = @"zxcvbnm,./";
+	NSString *bottomRow = @"ZXCVBNM,./";
 	[self makeKeys:bottomRow x:2.5*PADDED_KEY_SIZE y:3*PADDED_KEY_SIZE];
 
 	// I want to handle $ as the same as 4, and there's no function as far as I know that 'de-shifts'
@@ -61,18 +60,16 @@
 -(void)makeKeys:(NSString*)chars x:(int)xCoord y:(int)yCoord {
 	for (int i = 0; i < [chars length]; i++) {
 		NSString *label = [chars substringWithRange: NSMakeRange(i, 1)];
-		KeyView *key = [self makeKey:[label uppercaseString] x:xCoord+i*PADDED_KEY_SIZE y:yCoord width:KEY_SIZE];
-        NSLog(@"%@", label);
-		[keyMap setObject: key forKey: label];
+		[self makeKey:label x:xCoord+i*PADDED_KEY_SIZE y:yCoord width:KEY_SIZE];
 	}
 }
 
--(KeyView*)makeKey:(NSString*)label x:(int)xCoord y:(int)yCoord width:(int)width {
+-(void)makeKey:(NSString*)label x:(int)xCoord y:(int)yCoord width:(int)width {
     NSRect r = NSMakeRect(xCoord, yCoord, width, KEY_SIZE);
     KeyView *renderer = [[KeyView alloc] initWithFrame: r];
     [renderer setLabel: label];
     [self addSubview: renderer];
-    return renderer;
+    [keyMap setObject: renderer forKey: [label lowercaseString]];
 }
 
 

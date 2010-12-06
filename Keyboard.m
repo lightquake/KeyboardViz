@@ -27,6 +27,9 @@
 		case 127:
 			descriptor = @"del";
 			break;
+        case '\t':
+            descriptor = @"tab";
+            break;
 		default:
 			descriptor = chars;
 			break;
