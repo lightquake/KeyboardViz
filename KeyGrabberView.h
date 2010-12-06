@@ -17,4 +17,5 @@
 - (KeyRenderer *) lookupRenderer: (NSString*) idx;
 - (void) makeRenderers: (NSString *) chars x: (int) xCoord y: (int) yCoord;
 - (void) makeRenderer:(NSString*) label x:(int) xCoord y:(int) yCoord width: (int) w;
+@property (retain,getter=getMap) NSMutableDictionary *keyMap;
 @end

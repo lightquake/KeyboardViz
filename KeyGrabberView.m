@@ -55,8 +55,7 @@
 	for (int i = 0; i < [chars length]; i++) {
 		NSString *label = [chars substringWithRange: NSMakeRange(i, 1)];
 		NSRect r = NSMakeRect(xCoord + i * PADDED_KEY_SIZE, yCoord, KEY_SIZE, KEY_SIZE);
-		KeyRenderer *renderer = [[KeyRenderer alloc] init];
-		[renderer initWithFrame: r];
+		KeyRenderer *renderer = [[KeyRenderer alloc] initWithFrame: r];
 		[renderer setLabel: [label uppercaseString]];
 		[self addSubview: renderer];
 		[keyMap setObject: renderer forKey: label];
@@ -65,8 +64,7 @@
 
 - (void) makeRenderer:(NSString *)label x:(int)xCoord y:(int)yCoord width:(int)width {
 	NSRect r = NSMakeRect(xCoord, yCoord, width, KEY_SIZE);
-	KeyRenderer *renderer = [[KeyRenderer alloc] init];
-	[renderer initWithFrame: r];
+	KeyRenderer *renderer = [[KeyRenderer alloc] initWithFrame: r];
 	[renderer setLabel: label];
 	[self addSubview: renderer];
 	[keyMap setObject: renderer forKey: label];
@@ -90,4 +88,5 @@
 }
 
 	
+@synthesize keyMap;
 @end

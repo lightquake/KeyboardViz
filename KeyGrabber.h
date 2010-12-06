@@ -14,4 +14,5 @@
 }
 
 - (void) trigger: (NSEvent *) event;
+@property (retain) KeyGrabberView* myView;
 @end

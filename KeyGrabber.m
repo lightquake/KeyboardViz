@@ -38,4 +38,5 @@
 }
 
 
+@synthesize myView;
 @end
