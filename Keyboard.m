@@ -6,10 +6,10 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "KeyGrabber.h"
+#import "Keyboard.h"
 
 
-@implementation KeyGrabber
+@implementation Keyboard
 
 - (void)awakeFromNib {
 	[NSEvent addGlobalMonitorForEventsMatchingMask:(NSKeyDownMask) handler:^(NSEvent *event) {

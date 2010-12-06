@@ -11,7 +11,7 @@
 		256AC3DA0F4B6AC300CF3369 /* keyboardvizAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* keyboardvizAppDelegate.m */; };
 		30BAD52D129A489B0097E7F3 /* KeyGrabberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BAD52C129A489B0097E7F3 /* KeyGrabberView.m */; };
 		30E2BBDA12A923D3000C9ACB /* KeyRendererView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E2BBD912A923D3000C9ACB /* KeyRendererView.m */; };
-		30E8B17512993024008C417E /* KeyGrabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E8B17412993024008C417E /* KeyGrabber.m */; };
+		30E8B17512993024008C417E /* Keyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E8B17412993024008C417E /* Keyboard.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -32,8 +32,8 @@
 		30BAD52C129A489B0097E7F3 /* KeyGrabberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyGrabberView.m; sourceTree = "<group>"; };
 		30E2BBD812A923D3000C9ACB /* KeyRendererView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyRendererView.h; sourceTree = "<group>"; };
 		30E2BBD912A923D3000C9ACB /* KeyRendererView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyRendererView.m; sourceTree = "<group>"; };
-		30E8B17312993024008C417E /* KeyGrabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyGrabber.h; sourceTree = "<group>"; };
-		30E8B17412993024008C417E /* KeyGrabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyGrabber.m; sourceTree = "<group>"; };
+		30E8B17312993024008C417E /* Keyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keyboard.h; sourceTree = "<group>"; };
+		30E8B17412993024008C417E /* Keyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Keyboard.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* KeyboardViz-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KeyboardViz-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* KeyboardViz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardViz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -55,8 +55,8 @@
 			children = (
 				256AC3D80F4B6AC300CF3369 /* keyboardvizAppDelegate.h */,
 				256AC3D90F4B6AC300CF3369 /* keyboardvizAppDelegate.m */,
-				30E8B17312993024008C417E /* KeyGrabber.h */,
-				30E8B17412993024008C417E /* KeyGrabber.m */,
+				30E8B17312993024008C417E /* Keyboard.h */,
+				30E8B17412993024008C417E /* Keyboard.m */,
 				30BAD52B129A489B0097E7F3 /* KeyGrabberView.h */,
 				30BAD52C129A489B0097E7F3 /* KeyGrabberView.m */,
 				30E2BBD812A923D3000C9ACB /* KeyRendererView.h */,
@@ -195,7 +195,7 @@
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				256AC3DA0F4B6AC300CF3369 /* keyboardvizAppDelegate.m in Sources */,
-				30E8B17512993024008C417E /* KeyGrabber.m in Sources */,
+				30E8B17512993024008C417E /* Keyboard.m in Sources */,
 				30BAD52D129A489B0097E7F3 /* KeyGrabberView.m in Sources */,
 				30E2BBDA12A923D3000C9ACB /* KeyRendererView.m in Sources */,
 			);
