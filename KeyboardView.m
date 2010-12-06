@@ -12,6 +12,9 @@
 #define KEY_SIZE 50
 
 @implementation KeyboardView
+
+@synthesize keyMap;
+
 - (id) initWithFrame:(NSRect)frameRect {
 	self = [super initWithFrame: frameRect];
 	keyMap = [[NSMutableDictionary alloc] init];
@@ -74,9 +77,6 @@
 - (KeyView *) lookupRenderer: (NSString*) idx {
 	return [keyMap objectForKey:idx];
 }
-- (NSMutableDictionary *) getMap {
-	return keyMap;
-}
 
 - (BOOL) isFlipped {
 	return YES;
@@ -88,5 +88,4 @@
 }
 
 	
-@synthesize keyMap;
 @end

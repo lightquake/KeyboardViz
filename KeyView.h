@@ -15,9 +15,7 @@
 }
 
 - (void) setLabel: (NSString*) l;
-
-- (void) resetPresses;
-- (void) incPresses;
 - (void) decay;
-- (int) presses;
+@property (readwrite,assign) float presses;
+
 @end

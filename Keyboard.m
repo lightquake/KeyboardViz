@@ -11,13 +11,13 @@
 
 @implementation Keyboard
 
+@synthesize view;
+
 - (void)awakeFromNib {
 	[NSEvent addGlobalMonitorForEventsMatchingMask:(NSKeyDownMask) handler:^(NSEvent *event) {
 		[self trigger: event];
 	}];
 }
-
-
 
 - (void) trigger: (NSEvent *) event {
     if ([event isARepeat]) return;
@@ -33,10 +33,8 @@
 			descriptor = chars;
 			break;
 	}
-	KeyView *renderer = [myView lookupRenderer: descriptor];
-	[renderer incPresses];
+	KeyView *renderer = [view lookupRenderer: descriptor];
+    renderer.presses++;
 }
 
-
-@synthesize myView;
 @end

@@ -11,6 +11,8 @@
 
 @implementation KeyView
 
+@synthesize presses;
+
 - (KeyView*) initWithFrame:(NSRect)frameRect {
 	self = [super initWithFrame: frameRect];
 	textView = [[NSTextView alloc] initWithFrame: [self bounds]];
@@ -38,25 +40,6 @@
 	[textView setNeedsDisplay: true];
 }
 
-
-- (void) resetPresses {
-	presses = 0;
-}
-
-- (void) incPresses {
-	presses++;
-	[self setNeedsDisplay: YES];
-}
-
-- (void) decay {
-	presses /= pow(2.0, 1/600.0);
-	[self setNeedsDisplay: YES];
-}
-
-- (int) presses {
-	return presses;
-}
-
 - (void) drawRect:(NSRect)dirtyRect {
 	NSColor *color = [NSColor colorWithCalibratedHue: .7-presses * .008 saturation: 1 brightness: .2+(presses * .01) alpha: 1];
 	[color set];
@@ -64,4 +47,10 @@
 	[[NSColor blackColor] set];
 	NSFrameRectWithWidth([self bounds], 1);
 }
+
+- (void) decay {
+	presses /= pow(2.0, 1/600.0);
+	[self setNeedsDisplay: YES];
+}
+
 @end

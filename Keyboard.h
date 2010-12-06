@@ -10,9 +10,10 @@
 #import "KeyboardView.h"
 
 @interface Keyboard : NSObject {
-	IBOutlet KeyboardView* myView;
+	IBOutlet KeyboardView* view;
 }
 
 - (void) trigger: (NSEvent *) event;
-@property (retain) KeyboardView* myView;
+@property (retain) KeyboardView* view;
+
 @end
