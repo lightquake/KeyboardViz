@@ -1,5 +1,5 @@
 //
-//  KeyGrabberView.h
+//  KeyboardView.h
 //  keyboardviz
 //
 //  Created by Patrick on 11/22/10.
@@ -7,14 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "KeyRendererView.h"
+#import "KeyView.h"
 
 
 @interface KeyboardView : NSView {
 	NSMutableDictionary *keyMap;
 }
 
-- (KeyRendererView *) lookupRenderer: (NSString*) idx;
+- (KeyView *) lookupRenderer: (NSString*) idx;
 - (void) makeRenderers: (NSString *) chars x: (int) xCoord y: (int) yCoord;
 - (void) makeRenderer:(NSString*) label x:(int) xCoord y:(int) yCoord width: (int) w;
 @property (retain,getter=getMap) NSMutableDictionary *keyMap;

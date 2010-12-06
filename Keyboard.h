@@ -1,5 +1,5 @@
 //
-//  KeyGrabber.h
+//  Keyboard.h
 //  keyboardviz
 //
 //  Created by Patrick on 11/21/10.

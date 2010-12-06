@@ -1,5 +1,5 @@
 //
-//  KeyRenderer.h
+//  KeyView.h
 //  keyboardviz
 //
 //  Created by Patrick on 12/3/10.
@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface KeyRendererView : NSView	{
+@interface KeyView : NSView	{
 	float presses;
 	NSTextView *textView;
 }

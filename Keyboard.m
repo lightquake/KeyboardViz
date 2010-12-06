@@ -1,5 +1,5 @@
 //
-//  KeyGrabber.m
+//  Keyboard.m
 //  keyboardviz
 //
 //  Created by Patrick on 11/21/10.
@@ -33,7 +33,7 @@
 			descriptor = chars;
 			break;
 	}
-	KeyRendererView *renderer = [myView lookupRenderer: descriptor];
+	KeyView *renderer = [myView lookupRenderer: descriptor];
 	[renderer incPresses];
 }
 

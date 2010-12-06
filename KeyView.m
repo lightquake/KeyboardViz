@@ -1,17 +1,17 @@
 //
-//  KeyRenderer.m
+//  KeyView.m
 //  keyboardviz
 //
 //  Created by Patrick on 12/3/10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "KeyRendererView.h"
+#import "KeyView.h"
 
 
-@implementation KeyRendererView
+@implementation KeyView
 
-- (KeyRendererView*) initWithFrame:(NSRect)frameRect {
+- (KeyView*) initWithFrame:(NSRect)frameRect {
 	self = [super initWithFrame: frameRect];
 	textView = [[NSTextView alloc] initWithFrame: [self bounds]];
 	[textView setString: @""];
