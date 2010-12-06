@@ -29,9 +29,10 @@
 	[self makeKeys:topRow x:1.6 * PADDED_KEY_SIZE y:PADDED_KEY_SIZE];
     [self makeKey:@"tab" x:0 y:PADDED_KEY_SIZE width:1.5*PADDED_KEY_SIZE+1];
 
-    // middle row
+    // middle row and return
 	NSString *middleRow = @"ASDFGHJKL;'";
 	[self makeKeys:middleRow x:1.9*PADDED_KEY_SIZE y:2*PADDED_KEY_SIZE];
+    [self makeKey:@"return" x:13*PADDED_KEY_SIZE-5 y:2*PADDED_KEY_SIZE width:1.5*PADDED_KEY_SIZE+6];
 
     // bottom row
 	NSString *bottomRow = @"ZXCVBNM,./";

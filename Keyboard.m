@@ -23,12 +23,16 @@
 	NSString *descriptor;
 	if ([chars length] == 0) return; // dead key
 	unichar c = [chars characterAtIndex: 0];
+    NSLog(@"%d", c);
 	switch (c) {
 		case 127:
 			descriptor = @"del";
 			break;
         case '\t':
             descriptor = @"tab";
+            break;
+        case '\r':
+            descriptor = @"return";
             break;
 		default:
 			descriptor = chars;
