@@ -12,12 +12,17 @@
 @implementation Keyboard
 
 - (void)awakeFromNib {
+    lastFlags = 0;
+    [NSEvent addGlobalMonitorForEventsMatchingMask:(NSFlagsChangedMask) handler:^(NSEvent *event) {
+        [self flagTrigger: event];
+    }];
 	[NSEvent addGlobalMonitorForEventsMatchingMask:(NSKeyDownMask) handler:^(NSEvent *event) {
-		[self trigger: event];
+		[self keyTrigger: event];
 	}];
+
 }
 
-- (void) trigger: (NSEvent *) event {
+-(void)keyTrigger:(NSEvent*)event {
     if ([event isARepeat]) return;
     NSString *chars = [[event charactersIgnoringModifiers] lowercaseString];
 	NSString *descriptor;
@@ -40,6 +45,15 @@
 	}
     
     [kbView keyPressed:descriptor];
+}
+
+-(void)flagTrigger:(NSEvent*)event {
+    NSUInteger flags = [event modifierFlags];
+    NSUInteger masked = flags & ~lastFlags;
+    if (masked & NSAlphaShiftKeyMask) {
+        [kbView keyPressed:@"caps lock"];
+    }
+    lastFlags = flags;
 }
 
 @end
