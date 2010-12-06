@@ -20,12 +20,10 @@
 
 
 - (void) trigger: (NSEvent *) event {
-	NSString *chars = @"";
-	if ([event type] == NSKeyDown) {
-		chars = [[event charactersIgnoringModifiers] lowercaseString];
-	}
+    if ([event isARepeat]) return;
+    NSString *chars = [[event charactersIgnoringModifiers] lowercaseString];
 	NSString *descriptor;
-	if ([chars length] == 0) return;
+	if ([chars length] == 0) return; // dead key
 	unichar c = [chars characterAtIndex: 0];
 	switch (c) {
 		case 127:
