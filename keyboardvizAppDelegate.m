@@ -13,7 +13,9 @@
 @synthesize window;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	// Insert code here to initialize your application 
+    [window setBackgroundColor:[NSColor colorWithDeviceWhite:1.0 alpha:0.0]];
+    [window setOpaque:NO];
+    [window setHasShadow:NO];
 }
 
 -(BOOL) applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
