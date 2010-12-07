@@ -40,7 +40,6 @@
 	[self makeKeys:bottomRow x:2.3*PADDED_KEY_SIZE y:3*PADDED_KEY_SIZE];
     [self makeKey:@"shift" x:0 y:3*PADDED_KEY_SIZE width:2.2*PADDED_KEY_SIZE];
     [self makeKey:@"shift'" x:12.3*PADDED_KEY_SIZE y:3*PADDED_KEY_SIZE width:2.2*PADDED_KEY_SIZE+1];
-    [[keyMap objectForKey:@"shift'"] setLabel:@"shift"];
     
     // modifier row
     [self makeKey:@"fn" x:0 y:4*PADDED_KEY_SIZE width:KEY_SIZE];
@@ -48,6 +47,8 @@
     [self makeKey:@"option" x:2*PADDED_KEY_SIZE y:4*PADDED_KEY_SIZE width:KEY_SIZE];
     [self makeKey:@"command" x:3*PADDED_KEY_SIZE y:4*PADDED_KEY_SIZE width:1.3*KEY_SIZE+1];
     [self makeKey:@" " x:4.3*PADDED_KEY_SIZE y:4*PADDED_KEY_SIZE width:5*PADDED_KEY_SIZE-5];
+    [self makeKey:@"command'" x:9.3*PADDED_KEY_SIZE y:4*PADDED_KEY_SIZE width:1.3*PADDED_KEY_SIZE+1];
+    [self makeKey:@"option'" x:10.7*PADDED_KEY_SIZE y:4*PADDED_KEY_SIZE width:PADDED_KEY_SIZE];
 
 	// I want to handle $ as the same as 4, and there's no function as far as I know that 'de-shifts'
 	NSString *upperSymbols = @"~!@#$%^&*()_+{}|:\"<>?";
@@ -79,7 +80,12 @@
 -(void)makeKey:(NSString*)label x:(int)xCoord y:(int)yCoord width:(int)width {
     NSRect r = NSMakeRect(xCoord, yCoord, width, KEY_SIZE);
     KeyView *renderer = [[KeyView alloc] initWithFrame: r];
-    if (label.length > 1) {
+    NSUInteger len = label.length;
+    if (len > 1) {
+        if ([label characterAtIndex:(len-1)] == '\'') {
+            // handle the ' at the end
+            label = [label substringToIndex:(len-1)];
+        }
         [renderer setTextSize:10.0];
     }
     [renderer setLabel: label];
@@ -91,10 +97,11 @@
 -(void)keyPressed:(NSString*)keyName {
     [[keyMap objectForKey:keyName] keypress];
     
-    if (keyName == @"shift") {
-        KeyView *key = [keyMap objectForKey:@"shift'"];
-        key.presses++;
-        [key setNeedsDisplay:YES];
+    if (keyName == @"shift" || keyName == @"command" || keyName == @"option") {
+        NSString *altString = [keyName stringByAppendingString:@"'"];
+        KeyView *altKey = [keyMap objectForKey: altString];
+        altKey.presses++;
+        [altKey setNeedsDisplay:YES];
     }
 
 }
