@@ -51,7 +51,6 @@
     NSUInteger flags = [event modifierFlags];
     NSUInteger masked = flags & ~lastFlags;
     lastFlags = flags;
-    NSLog(@"%d %d %d", lastFlags, masked, masked & NSFunctionKeyMask);
     if (masked & NSFunctionKeyMask) [kbView keyPressed:@"fn"];
     if (masked & NSControlKeyMask) [kbView keyPressed:@"control"];
     if (masked & NSAlphaShiftKeyMask) [kbView keyPressed:@"caps lock"];

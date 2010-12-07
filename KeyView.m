@@ -7,14 +7,18 @@
 //
 
 #import "KeyView.h"
+#import "KeyAnimation.h"
 
 
 @implementation KeyView
 
 @synthesize presses;
+@synthesize whiteout;
 
 - (KeyView*) initWithFrame:(NSRect)frameRect {
 	self = [super initWithFrame: frameRect];
+    anim = [[KeyAnimation alloc] initWithView:self];
+    [anim setAnimationBlockingMode:NSAnimationNonblocking];
 	textView = [[NSTextView alloc] initWithFrame: [self bounds]];
 	[textView setString: @""];
 	[textView setDrawsBackground: false];
@@ -43,7 +47,7 @@
 }
 
 -(void)drawRect:(NSRect)dirtyRect {
-	NSColor *color = [NSColor colorWithCalibratedHue: .7-presses * .004 saturation: 1 brightness: .2+(presses * .004) alpha: 1];
+	NSColor *color = [NSColor colorWithCalibratedHue: .7-presses * .004 saturation: 1 brightness: .2+(presses * .004) alpha:1-whiteout];
 	[color set];
 	NSRectFill([self bounds]);
 	[[NSColor blackColor] set];
@@ -52,6 +56,8 @@
 
 -(void)keypress {
     presses++;
+    [anim setCurrentProgress:0.0];
+    [anim startAnimation];
     [self setNeedsDisplay:YES];
 }
 
