@@ -56,6 +56,8 @@
     if (masked & NSControlKeyMask) [kbView keyPressed:@"control"];
     if (masked & NSAlphaShiftKeyMask) [kbView keyPressed:@"caps lock"];
     if (masked & NSShiftKeyMask) [kbView keyPressed:@"shift"];
+    if (masked & NSAlternateKeyMask) [kbView keyPressed:@"option"];
+    if (masked & NSCommandKeyMask) [kbView keyPressed:@"command"];
 }
 
 @end

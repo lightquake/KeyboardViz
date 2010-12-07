@@ -45,6 +45,8 @@
     // modifier row
     [self makeKey:@"fn" x:0 y:4*PADDED_KEY_SIZE width:KEY_SIZE];
     [self makeKey:@"control" x:PADDED_KEY_SIZE y:4*PADDED_KEY_SIZE width:KEY_SIZE];
+    [self makeKey:@"option" x:2*PADDED_KEY_SIZE y:4*PADDED_KEY_SIZE width:KEY_SIZE];
+    [self makeKey:@"command" x:3*PADDED_KEY_SIZE y:4*PADDED_KEY_SIZE width:1.3*KEY_SIZE+1];
     [self makeKey:@" " x:4.3*PADDED_KEY_SIZE y:4*PADDED_KEY_SIZE width:5*PADDED_KEY_SIZE-5];
 
 	// I want to handle $ as the same as 4, and there's no function as far as I know that 'de-shifts'
