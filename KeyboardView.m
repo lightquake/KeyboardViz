@@ -37,7 +37,10 @@
 
     // bottom row
 	NSString *bottomRow = @"ZXCVBNM,./";
-	[self makeKeys:bottomRow x:2.5*PADDED_KEY_SIZE y:3*PADDED_KEY_SIZE];
+	[self makeKeys:bottomRow x:2.3*PADDED_KEY_SIZE y:3*PADDED_KEY_SIZE];
+    [self makeKey:@"shift" x:0 y:3*PADDED_KEY_SIZE width:2.2*PADDED_KEY_SIZE];
+    [self makeKey:@"shift'" x:12.3*PADDED_KEY_SIZE y:3*PADDED_KEY_SIZE width:2.2*PADDED_KEY_SIZE+1];
+    [[keyMap objectForKey:@"shift'"] setLabel:@"shift"];
 
 	// I want to handle $ as the same as 4, and there's no function as far as I know that 'de-shifts'
 	NSString *upperSymbols = @"~!@#$%^&*()_+{}|:\"<>?";
@@ -79,6 +82,13 @@
     KeyView *key = [keyMap objectForKey:keyName];
     key.presses++;
     [key setNeedsDisplay:YES];
+    
+    if (keyName == @"shift") {
+        KeyView *key = [keyMap objectForKey:@"shift'"];
+        key.presses++;
+        [key setNeedsDisplay:YES];
+    }
+
 }
 
 -(void)decay:(NSTimer*)timer {

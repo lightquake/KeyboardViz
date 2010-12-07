@@ -54,6 +54,9 @@
         [kbView keyPressed:@"caps lock"];
     }
     lastFlags = flags;
+    if (masked & NSShiftKeyMask) {
+        [kbView keyPressed:@"shift"];
+    }
 }
 
 @end
