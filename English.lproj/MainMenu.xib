@@ -180,7 +180,7 @@
 			<object class="NSWindowTemplate" id="972006081">
 				<int key="NSWindowStyleMask">7</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{335, 412}, {808, 225}}</string>
+				<string key="NSWindowRect">{{335, 412}, {808, 280}}</string>
 				<int key="NSWTFlags">1954021376</int>
 				<string key="NSWindowTitle">KeyboardViz</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -194,12 +194,12 @@
 						<object class="NSCustomView" id="499649954">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">256</int>
-							<string key="NSFrame">{{5, 5}, {798, 215}}</string>
+							<string key="NSFrame">{{5, 5}, {798, 270}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<string key="NSClassName">KeyboardView</string>
 						</object>
 					</object>
-					<string key="NSFrameSize">{808, 225}</string>
+					<string key="NSFrameSize">{808, 280}</string>
 					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
@@ -548,9 +548,9 @@
 					<integer value="1"/>
 					<string>{74, 862}</string>
 					<string>{{6, 978}, {478, 20}}</string>
-					<string>{{433, 518}, {808, 225}}</string>
+					<string>{{320, 463}, {808, 280}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{433, 518}, {808, 225}}</string>
+					<string>{{320, 463}, {808, 280}}</string>
 					<integer value="1"/>
 					<string>{{33, 99}, {480, 360}}</string>
 					<boolean value="NO"/>

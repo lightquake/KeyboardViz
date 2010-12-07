@@ -41,6 +41,9 @@
     [self makeKey:@"shift" x:0 y:3*PADDED_KEY_SIZE width:2.2*PADDED_KEY_SIZE];
     [self makeKey:@"shift'" x:12.3*PADDED_KEY_SIZE y:3*PADDED_KEY_SIZE width:2.2*PADDED_KEY_SIZE+1];
     [[keyMap objectForKey:@"shift'"] setLabel:@"shift"];
+    
+    // modifier row
+    [self makeKey:@" " x:4.3*PADDED_KEY_SIZE y:4*PADDED_KEY_SIZE width:5*PADDED_KEY_SIZE-5];
 
 	// I want to handle $ as the same as 4, and there's no function as far as I know that 'de-shifts'
 	NSString *upperSymbols = @"~!@#$%^&*()_+{}|:\"<>?";
