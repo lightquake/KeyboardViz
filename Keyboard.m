@@ -50,13 +50,12 @@
 -(void)flagTrigger:(NSEvent*)event {
     NSUInteger flags = [event modifierFlags];
     NSUInteger masked = flags & ~lastFlags;
-    if (masked & NSAlphaShiftKeyMask) {
-        [kbView keyPressed:@"caps lock"];
-    }
     lastFlags = flags;
-    if (masked & NSShiftKeyMask) {
-        [kbView keyPressed:@"shift"];
-    }
+    NSLog(@"%d %d %d", lastFlags, masked, masked & NSFunctionKeyMask);
+    if (masked & NSFunctionKeyMask) [kbView keyPressed:@"fn"];
+    if (masked & NSControlKeyMask) [kbView keyPressed:@"control"];
+    if (masked & NSAlphaShiftKeyMask) [kbView keyPressed:@"caps lock"];
+    if (masked & NSShiftKeyMask) [kbView keyPressed:@"shift"];
 }
 
 @end

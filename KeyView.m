@@ -27,7 +27,9 @@
 	return self;
 }
 
-
+-(void)setTextSize:(float)size {
+    [textView setFont: [NSFont systemFontOfSize: size]];
+}
 
 - (void) setLabel: (NSString*) l {
 	[textView setString: l];

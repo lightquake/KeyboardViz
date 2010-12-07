@@ -13,8 +13,8 @@
 	float presses;
 	NSTextView *textView;
 }
-
-- (void) setLabel: (NSString*) l;
+- (void) setTextSize:(float)size;
+- (void) setLabel:(NSString*)l;
 - (void) keypress;
 - (void) decay;
 @property (readwrite,assign) float presses;

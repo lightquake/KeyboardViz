@@ -43,6 +43,8 @@
     [[keyMap objectForKey:@"shift'"] setLabel:@"shift"];
     
     // modifier row
+    [self makeKey:@"fn" x:0 y:4*PADDED_KEY_SIZE width:KEY_SIZE];
+    [self makeKey:@"control" x:PADDED_KEY_SIZE y:4*PADDED_KEY_SIZE width:KEY_SIZE];
     [self makeKey:@" " x:4.3*PADDED_KEY_SIZE y:4*PADDED_KEY_SIZE width:5*PADDED_KEY_SIZE-5];
 
 	// I want to handle $ as the same as 4, and there's no function as far as I know that 'de-shifts'
@@ -75,6 +77,9 @@
 -(void)makeKey:(NSString*)label x:(int)xCoord y:(int)yCoord width:(int)width {
     NSRect r = NSMakeRect(xCoord, yCoord, width, KEY_SIZE);
     KeyView *renderer = [[KeyView alloc] initWithFrame: r];
+    if (label.length > 1) {
+        [renderer setTextSize:10.0];
+    }
     [renderer setLabel: label];
     [self addSubview: renderer];
     [keyMap setObject: renderer forKey: [label lowercaseString]];
