@@ -80,6 +80,8 @@
 -(void)makeKey:(NSString*)label x:(int)xCoord y:(int)yCoord width:(int)width {
     NSRect r = NSMakeRect(xCoord, yCoord, width, KEY_SIZE);
     KeyView *renderer = [[KeyView alloc] initWithFrame: r];
+    [keyMap setObject: renderer forKey: [label lowercaseString]];
+
     NSUInteger len = label.length;
     if (len > 1) {
         if ([label characterAtIndex:(len-1)] == '\'') {
@@ -90,7 +92,6 @@
     }
     [renderer setLabel: label];
     [self addSubview: renderer];
-    [keyMap setObject: renderer forKey: [label lowercaseString]];
 }
 
 
@@ -100,8 +101,7 @@
     if (keyName == @"shift" || keyName == @"command" || keyName == @"option") {
         NSString *altString = [keyName stringByAppendingString:@"'"];
         KeyView *altKey = [keyMap objectForKey: altString];
-        altKey.presses++;
-        [altKey setNeedsDisplay:YES];
+        [altKey keypress];
     }
 
 }
