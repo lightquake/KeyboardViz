@@ -15,7 +15,8 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [window setBackgroundColor:[NSColor colorWithDeviceWhite:1.0 alpha:0.0]];
     [window setOpaque:NO];
-    [window setHasShadow:NO];
+//    [window setHasShadow:NO];
+    [window setStyleMask:NSBorderlessWindowMask];
 }
 
 -(BOOL) applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication

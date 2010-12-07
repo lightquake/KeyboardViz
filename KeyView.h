@@ -15,6 +15,7 @@
 }
 
 - (void) setLabel: (NSString*) l;
+- (void) keypress;
 - (void) decay;
 @property (readwrite,assign) float presses;
 

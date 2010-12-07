@@ -82,9 +82,7 @@
 
 
 -(void)keyPressed:(NSString*)keyName {
-    KeyView *key = [keyMap objectForKey:keyName];
-    key.presses++;
-    [key setNeedsDisplay:YES];
+    [[keyMap objectForKey:keyName] keypress];
     
     if (keyName == @"shift") {
         KeyView *key = [keyMap objectForKey:@"shift'"];

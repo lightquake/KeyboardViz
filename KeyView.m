@@ -40,16 +40,21 @@
 	[textView setNeedsDisplay: true];
 }
 
-- (void) drawRect:(NSRect)dirtyRect {
-	NSColor *color = [NSColor colorWithCalibratedHue: .7-presses * .008 saturation: 1 brightness: .2+(presses * .01) alpha: 1];
+-(void)drawRect:(NSRect)dirtyRect {
+	NSColor *color = [NSColor colorWithCalibratedHue: .7-presses * .004 saturation: 1 brightness: .2+(presses * .004) alpha: 1];
 	[color set];
 	NSRectFill([self bounds]);
 	[[NSColor blackColor] set];
-	NSFrameRectWithWidth([self bounds], 1);
+	NSFrameRectWithWidth(self.bounds, 1);
+}
+
+-(void)keypress {
+    presses++;
+    [self setNeedsDisplay:YES];
 }
 
 - (void) decay {
-	presses /= pow(2.0, 1/600.0);
+	presses /= pow(2.0, 1/1200.0);
 	[self setNeedsDisplay: YES];
 }
 
