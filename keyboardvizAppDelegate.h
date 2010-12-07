@@ -12,6 +12,8 @@
     NSWindow *window;
 }
 
+
+-(IBAction)toggleTitlebar:(id)sender;
 @property (assign) IBOutlet NSWindow *window;
 
 @end

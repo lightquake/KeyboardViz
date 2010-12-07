@@ -15,12 +15,20 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [window setBackgroundColor:[NSColor colorWithDeviceWhite:1.0 alpha:0.0]];
     [window setOpaque:NO];
-//    [window setHasShadow:NO];
-    [window setStyleMask:NSBorderlessWindowMask];
+    [window setStyleMask:7];
 }
 
 -(BOOL) applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
 {
     return YES;
+}
+
+-(IBAction)toggleTitlebar:(id)sender {
+    if ([window styleMask])
+        [window setStyleMask:0];
+    else {
+        [window setStyleMask:NSTitledWindowMask | NSClosableWindowMask | NSMiniaturizableWindowMask];
+        [window setTitle:@"KeyboardViz"];
+    }
 }
 @end

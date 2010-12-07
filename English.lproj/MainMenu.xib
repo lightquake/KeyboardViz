@@ -12,8 +12,8 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="29"/>
-			<integer value="372"/>
+			<integer value="563"/>
+			<integer value="371"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -204,6 +204,15 @@
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 								</object>
+								<object class="NSMenuItem" id="625952304">
+									<reference key="NSMenu" ref="339939556"/>
+									<string key="NSTitle">Toggle Titlebar</string>
+									<string key="NSKeyEquiv">t</string>
+									<int key="NSKeyEquivModMask">1048576</int>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="35465992"/>
+									<reference key="NSMixedImage" ref="502551668"/>
+								</object>
 								<object class="NSMenuItem" id="406451211">
 									<reference key="NSMenu" ref="339939556"/>
 									<bool key="NSIsDisabled">YES</bool>
@@ -232,7 +241,7 @@
 			<object class="NSWindowTemplate" id="972006081">
 				<int key="NSWindowStyleMask">7</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{335, 412}, {808, 280}}</string>
+				<string key="NSWindowRect">{{335, 412}, {798, 270}}</string>
 				<int key="NSWTFlags">1954021376</int>
 				<string key="NSWindowTitle">KeyboardViz</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -246,12 +255,12 @@
 						<object class="NSCustomView" id="499649954">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">256</int>
-							<string key="NSFrame">{{5, 5}, {798, 270}}</string>
+							<string key="NSFrameSize">{798, 270}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<string key="NSClassName">KeyboardView</string>
 						</object>
 					</object>
-					<string key="NSFrameSize">{808, 280}</string>
+					<string key="NSFrameSize">{798, 270}</string>
 					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
@@ -360,6 +369,14 @@
 						<reference key="destination" ref="369585022"/>
 					</object>
 					<int key="connectionID">570</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">toggleTitlebar:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="625952304"/>
+					</object>
+					<int key="connectionID">572</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -554,6 +571,7 @@
 							<reference ref="369585022"/>
 							<reference ref="406451211"/>
 							<reference ref="372922375"/>
+							<reference ref="625952304"/>
 						</object>
 						<reference key="parent" ref="971672313"/>
 					</object>
@@ -575,6 +593,11 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">567</int>
 						<reference key="object" ref="372922375"/>
+						<reference key="parent" ref="339939556"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">571</int>
+						<reference key="object" ref="625952304"/>
 						<reference key="parent" ref="339939556"/>
 					</object>
 				</object>
@@ -629,6 +652,7 @@
 					<string>56.IBPluginDependency</string>
 					<string>56.ImportedFromIB2</string>
 					<string>562.IBPluginDependency</string>
+					<string>563.IBEditorWindowLastContentRect</string>
 					<string>563.IBPluginDependency</string>
 					<string>564.IBPluginDependency</string>
 					<string>565.IBPluginDependency</string>
@@ -638,6 +662,7 @@
 					<string>57.IBPluginDependency</string>
 					<string>57.ImportedFromIB2</string>
 					<string>57.editorWindowContentRectSynchronizationRect</string>
+					<string>571.IBPluginDependency</string>
 					<string>58.IBPluginDependency</string>
 					<string>58.ImportedFromIB2</string>
 				</object>
@@ -667,14 +692,14 @@
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
-					<string>{{380, 835}, {204, 20}}</string>
+					<string>{{382, 835}, {204, 20}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>{74, 862}</string>
 					<string>{{6, 978}, {478, 20}}</string>
-					<string>{{320, 463}, {808, 280}}</string>
+					<string>{{285, 478}, {798, 270}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{320, 463}, {808, 280}}</string>
+					<string>{{285, 478}, {798, 270}}</string>
 					<integer value="1"/>
 					<string>{{33, 99}, {480, 360}}</string>
 					<boolean value="NO"/>
@@ -691,6 +716,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>{{503, 742}, {194, 93}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -700,6 +726,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>{{23, 794}, {245, 183}}</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 				</object>
@@ -720,7 +747,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">570</int>
+			<int key="maxID">572</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -782,6 +809,17 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">keyboardvizAppDelegate</string>
 					<string key="superclassName">NSObject</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">toggleTitlebar:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">toggleTitlebar:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">toggleTitlebar:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">window</string>
 						<string key="NS.object.0">NSWindow</string>
