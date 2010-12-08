@@ -12,11 +12,11 @@
 @implementation Keyboard
 
 - (void)awakeFromNib {
-    __block NSUInteger lastFlag = 0;
+    __block NSUInteger lastFlags = 0;
     void (^flagTrigger)(NSEvent*) = ^ (NSEvent *event) {
         NSUInteger flags = [event modifierFlags];
-        NSUInteger masked = flags & ~lastFlag;
-        lastFlag = flags;
+        NSUInteger masked = flags & ~lastFlags;
+        lastFlags = flags;
         if (masked & NSFunctionKeyMask) [kbView keyPressed:@"fn"];
         if (masked & NSControlKeyMask) [kbView keyPressed:@"control"];
         if (masked & NSAlphaShiftKeyMask) [kbView keyPressed:@"caps lock"];
