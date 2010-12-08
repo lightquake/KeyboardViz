@@ -56,8 +56,6 @@
 
 -(void)keypress {
     presses++;
-    [anim setCurrentProgress:0.0];
-    [anim startAnimation];
     [self setNeedsDisplay:YES];
 }
 

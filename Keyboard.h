@@ -11,10 +11,7 @@
 
 @interface Keyboard : NSObject {
 	IBOutlet KeyboardView* kbView;
-    @public NSUInteger lastFlags;
 }
 
 -(void)keyTrigger:(NSEvent*)event;
--(void)flagTrigger:(NSEvent*)event;
-
 @end

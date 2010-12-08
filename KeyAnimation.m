@@ -15,7 +15,6 @@
 -(KeyAnimation*)initWithView:(KeyView*)view {
     if (view.whiteout != 0) return nil;
     self = [super initWithDuration:0.5 animationCurve:NSAnimationEaseIn];
-    NSLog(@"initting");
     myView = view;
     return self;
 }
