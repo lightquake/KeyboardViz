@@ -25,9 +25,9 @@
         if (masked & NSCommandKeyMask) [kbView keyPressed:@"command"];
     };
     [NSEvent addGlobalMonitorForEventsMatchingMask:(NSFlagsChangedMask) handler:flagTrigger];
-	[NSEvent addGlobalMonitorForEventsMatchingMask:(NSKeyDownMask) handler:^(NSEvent *event) {
-		[self keyTrigger: event];
-	}];
+    [NSEvent addGlobalMonitorForEventsMatchingMask:(NSKeyDownMask) handler:^(NSEvent *event) {
+        [self keyTrigger: event];
+    }];
 
 }
 
@@ -39,20 +39,20 @@
 	unichar c = [chars characterAtIndex: 0];
 
 	switch (c) {
-		case 127:
-			descriptor = @"delete";
-			break;
+        case 127:
+            descriptor = @"delete";
+            break;
         case '\t':
             descriptor = @"tab";
             break;
         case '\r':
             descriptor = @"return";
             break;
-		default:
-			descriptor = chars;
-			break;
-	}
-    
+        default:
+            descriptor = chars;
+            break;
+    }
+
     [kbView keyPressed:descriptor];
 }
 
