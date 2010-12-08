@@ -12,10 +12,19 @@
 @implementation Keyboard
 
 - (void)awakeFromNib {
-    lastFlags = 0;
-    [NSEvent addGlobalMonitorForEventsMatchingMask:(NSFlagsChangedMask) handler:^(NSEvent *event) {
-        [self flagTrigger: event];
-    }];
+    __block NSUInteger lastFlag = 0;
+    void (^flagTrigger)(NSEvent*) = ^ (NSEvent *event) {
+        NSUInteger flags = [event modifierFlags];
+        NSUInteger masked = flags & ~lastFlag;
+        lastFlag = flags;
+        if (masked & NSFunctionKeyMask) [kbView keyPressed:@"fn"];
+        if (masked & NSControlKeyMask) [kbView keyPressed:@"control"];
+        if (masked & NSAlphaShiftKeyMask) [kbView keyPressed:@"caps lock"];
+        if (masked & NSShiftKeyMask) [kbView keyPressed:@"shift"];
+        if (masked & NSAlternateKeyMask) [kbView keyPressed:@"option"];
+        if (masked & NSCommandKeyMask) [kbView keyPressed:@"command"];
+    };
+    [NSEvent addGlobalMonitorForEventsMatchingMask:(NSFlagsChangedMask) handler:flagTrigger];
 	[NSEvent addGlobalMonitorForEventsMatchingMask:(NSKeyDownMask) handler:^(NSEvent *event) {
 		[self keyTrigger: event];
 	}];
@@ -45,18 +54,6 @@
 	}
     
     [kbView keyPressed:descriptor];
-}
-
--(void)flagTrigger:(NSEvent*)event {
-    NSUInteger flags = [event modifierFlags];
-    NSUInteger masked = flags & ~lastFlags;
-    lastFlags = flags;
-    if (masked & NSFunctionKeyMask) [kbView keyPressed:@"fn"];
-    if (masked & NSControlKeyMask) [kbView keyPressed:@"control"];
-    if (masked & NSAlphaShiftKeyMask) [kbView keyPressed:@"caps lock"];
-    if (masked & NSShiftKeyMask) [kbView keyPressed:@"shift"];
-    if (masked & NSAlternateKeyMask) [kbView keyPressed:@"option"];
-    if (masked & NSCommandKeyMask) [kbView keyPressed:@"command"];
 }
 
 @end
