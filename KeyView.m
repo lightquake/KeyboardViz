@@ -43,6 +43,7 @@
 }
 
 - (void) decay {
+  if (presses == 0.0) return;
 	presses /= pow(2.0, 1/1200.0);
   [self computeAndSetBackgroundColor];
 }
