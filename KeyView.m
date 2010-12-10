@@ -16,7 +16,7 @@
 @synthesize whiteout;
 
 - (KeyView*) initWithFrame:(NSRect)frameRect {
-	self = [super initWithFrame: frameRect];
+  if ((self = [super initWithFrame: frameRect])) {
     anim = [[KeyAnimation alloc] initWithView:self];
     [anim setAnimationBlockingMode:NSAnimationNonblocking];
 	textView = [[NSTextView alloc] initWithFrame: [self bounds]];
@@ -28,6 +28,7 @@
 	[textView setEditable: NO];
 	[textView setSelectable: NO];
 	[self addSubview: textView];
+	}
 	return self;
 }
 
