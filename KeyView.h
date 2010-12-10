@@ -18,8 +18,8 @@
 - (void) keypress;
 - (void) decay;
 
-@property (readwrite,assign) float presses;
-@property (readwrite,assign) float whiteout;
+@property (readwrite,assign,nonatomic) float presses;
+@property (readwrite,assign,nonatomic) float whiteout;
 
 - (void)computeAndSetBackgroundColor;
 
