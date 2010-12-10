@@ -19,50 +19,32 @@
   if ((self = [super initWithFrame: frameRect])) {
     anim = [[KeyAnimation alloc] initWithView:self];
     [anim setAnimationBlockingMode:NSAnimationNonblocking];
-	textView = [[NSTextView alloc] initWithFrame: [self bounds]];
-	[textView setString: @""];
-	[textView setDrawsBackground: false];
-	[textView alignCenter: textView];
-	[textView setFont: [NSFont systemFontOfSize: 18]];
-	[textView setTextColor: [NSColor whiteColor]];
-	[textView setEditable: NO];
-	[textView setSelectable: NO];
-	[self addSubview: textView];
+  	[self setStringValue: @""];
+  	[self setDrawsBackground:YES];
+  	[self setAlignment: NSCenterTextAlignment];
+  	[self setFont: [NSFont systemFontOfSize: 18]];
+  	[self setTextColor: [NSColor whiteColor]];
+  	[self setEditable: NO];
+  	[self setSelectable: NO];
+    [self setBordered:YES];
 	}
 	return self;
 }
 
--(void)setTextSize:(float)size {
-    [textView setFont: [NSFont systemFontOfSize: size]];
-}
-
-- (void) setLabel: (NSString*) l {
-	[textView setString: l];
-	[textView sizeToFit];
-	NSLayoutManager* layoutManager = [[textView textContainer] layoutManager];
-	float boundHeight = [self bounds].size.height;
-	float glyphHeight = [layoutManager usedRectForTextContainer: [textView textContainer]].size.height;
-	NSSize inset = NSMakeSize(0, (boundHeight - glyphHeight) / 2);
-	[textView setTextContainerInset: inset];
-	[textView setNeedsDisplay: true];
-}
-
--(void)drawRect:(NSRect)dirtyRect {
-	NSColor *color = [NSColor colorWithCalibratedHue: .7-presses * .004 saturation: 1-whiteout brightness: whiteout+.2+(presses * .004) alpha:1];
-	[color set];
-	NSRectFill([self bounds]);
-	[[NSColor blackColor] set];
-	NSFrameRectWithWidth(self.bounds, 1);
+- (void)computeAndSetBackgroundColor
+{
+  [self setBackgroundColor:[NSColor colorWithCalibratedHue: .7-presses * .004 saturation: 1-whiteout brightness: whiteout+.2+(presses * .004) alpha:1]];
 }
 
 -(void)keypress {
-    presses++;
-    [self setNeedsDisplay:YES];
+  presses++;
+  [anim setCurrentProgress:0.0];
+  [anim startAnimation];
 }
 
 - (void) decay {
 	presses /= pow(2.0, 1/1200.0);
-	[self setNeedsDisplay: YES];
+  [self computeAndSetBackgroundColor];
 }
 
 @end

@@ -91,9 +91,9 @@
             // handle the ' at the end
             label = [label substringToIndex:(len-1)];
         }
-        [renderer setTextSize:10.0];
+        [renderer setFont:[NSFont systemFontOfSize:10.0]];
     }
-    [renderer setLabel: label];
+    [renderer setStringValue: label];
     [self addSubview: renderer];
 }
 

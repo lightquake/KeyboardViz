@@ -23,7 +23,7 @@
 -(void)setCurrentProgress:(NSAnimationProgress)progress {
     [super setCurrentProgress:progress];
     myView.whiteout = 1-progress;
-    [myView setNeedsDisplay:YES];
+    [myView computeAndSetBackgroundColor];
 }
     
     
