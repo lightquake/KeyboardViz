@@ -10,7 +10,7 @@
 
 @class KeyAnimation;
 
-@interface KeyView : NSTextField	{
+@interface KeyView : NSTextField {
 	float presses;
     float whiteout;
     KeyAnimation *anim;
