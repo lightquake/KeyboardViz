@@ -14,7 +14,7 @@
 
 -(KeyAnimation*)initWithView:(KeyView*)view {
     if (view.whiteout != 0) return nil;
-    if ((self = [super initWithDuration:0.5 animationCurve:NSAnimationEaseIn])) {
+    if ((self = [super initWithDuration:0.2 animationCurve:NSAnimationEaseIn])) {
         myView = view;
     }
     return self;

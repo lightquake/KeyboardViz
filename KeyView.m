@@ -31,7 +31,6 @@
 	return self;
 }
 
-
 - (void)computeAndSetBackgroundColor {
     [self setBackgroundColor:[NSColor colorWithCalibratedHue: .7-presses * .004 saturation: 1-whiteout brightness: whiteout+.2+(presses * .004) alpha:1]];
 }
